@@ -52,6 +52,42 @@ class _HomePageState extends State<HomePage> {
               ],
             ),
             SizedBox(height: 15),
+
+            // 2nd Row Your program
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text(
+                  'Your program',
+                  style: TextStyle(
+                    fontSize: 16,
+                    fontWeight: FontWeight.w700,
+                    color: AppColor.homePageSubtitle,
+                  ),
+                ),
+                Row(
+                  children: [
+                    Text(
+                      'Details',
+                      style: TextStyle(
+                        fontSize: 16,
+                        fontWeight: FontWeight.w00,
+                        color: AppColor.homePageDetail,
+                      ),
+                    ),
+                    SizedBox(
+                      width: 5,
+                    ),
+                    Icon(
+                      Icons.arrow_forward,
+                      color: AppColor.homePageIcons,
+                      size: 14,
+                    )
+                  ],
+                )
+              ],
+            ),
+            SizedBox(height: 10),
           ],
         ),
       ),
