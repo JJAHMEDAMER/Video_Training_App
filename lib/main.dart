@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:video_training_app/pages/home_page.dart';
 
-void main(){
+void main() {
   runApp(MyApp());
 }
-
-
 
 class MyApp extends StatefulWidget {
   const MyApp({super.key});
@@ -17,6 +15,9 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
-    return HomePage();
+    return MaterialApp(
+      home: HomePage(),
+      debugShowCheckedModeBanner: false,
+    );
   }
 }
