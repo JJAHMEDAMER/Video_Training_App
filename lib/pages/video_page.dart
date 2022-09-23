@@ -138,7 +138,21 @@ class _VideoPageState extends State<VideoPage> {
 
             // 2nd Container
             // Wrap with expanded to fill the possible space
-            
+            Expanded(
+              child: Container(
+                padding: EdgeInsets.only(
+                  left: 15,
+                  right: 15,
+                  top: 20,
+                ),
+                decoration: BoxDecoration(
+                  color: AppColor.homePageBackground,
+                  borderRadius: BorderRadius.only(
+                    topRight: Radius.circular(70),
+                  ),
+                ),
+              ),
+            ),
           ],
         ),
       ),
