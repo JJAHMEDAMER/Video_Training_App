@@ -151,6 +151,34 @@ class _VideoPageState extends State<VideoPage> {
                     topRight: Radius.circular(70),
                   ),
                 ),
+                child: Column(
+                  children: [
+                    
+                    // 4th Row Card Title
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        AppText(varText: 'Circuit 1 : Legs Toning'),
+                        Row(
+                          children: [
+                            AppIcon(
+                              varIcon: Icons.refresh,
+                              varColor: AppColor.gradientFirst,
+                            ),
+                            SizedBox(width: 5),
+                            AppText(
+                              varText: '3 Sets',
+                              varColor: AppColor.greyTextColor,
+                              varSize: 10,
+                              varWeight: FontWeight.w600,
+                            ),
+                            SizedBox(width: 10),
+                          ],
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
               ),
             ),
           ],
