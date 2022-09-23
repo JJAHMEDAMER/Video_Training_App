@@ -255,6 +255,79 @@ class _HomePageState extends State<HomePage> {
               ),
             ),
             SizedBox(height: 5),
+
+            //5th Row Area of focus
+            Container(
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: [
+                  Text(
+                    'Area of focus',
+                    style: TextStyle(
+                      color: AppColor.homePageSubtitle,
+                      fontSize: 16,
+                      fontWeight: FontWeight.w600,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+
+            //6th Row - List
+            Container(
+              width: double.maxFinite,
+              height: 180,
+              child: ListView.builder(
+                itemCount: 4,
+                itemBuilder: (unsed_context, itemCount) {
+                  return Row(
+                    children: [
+                      Container(
+                        width: 110,
+                        height: 110,
+                        //padding: EdgeInsets.all(10),
+                        margin: EdgeInsets.only(top: 10),
+                        decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.circular(10),
+                          boxShadow: [
+                            BoxShadow(
+                              offset: Offset(0, 5),
+                              blurRadius: 5,
+                              color:
+                                  AppColor.homePagePlanColor.withOpacity(0.7),
+                            ),
+                          ],
+                        ),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Container(
+                              width: 80,
+                              height: 80,
+                              decoration: BoxDecoration(
+                                color: Colors.white,
+                                image: DecorationImage(
+                                  image: AssetImage('assets/ex4.png'),
+                                  fit: BoxFit.cover
+                                ),
+                              ),
+                            ),
+                            Text(
+                              'Arms',
+                              style: TextStyle(
+                                  color: AppColor.gradientSecond,
+                                  fontSize: 14,
+                                  fontWeight: FontWeight.w600),
+                            ),
+                          ],
+                        ),
+                      )
+                    ],
+                  );
+                },
+              ),
+            )
           ],
         ),
       ),
