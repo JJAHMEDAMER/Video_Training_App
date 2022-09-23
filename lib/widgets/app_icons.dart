@@ -20,7 +20,7 @@ class AppIcon extends StatelessWidget {
     return Icon(
       varIcon,
       size: varSize,
-      color: varColor == Colors.white ? AppColor.veryLightBlueIcon : varColor,
+      color: varColor,
     );
   }
 }
