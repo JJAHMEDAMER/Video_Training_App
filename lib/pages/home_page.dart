@@ -180,7 +180,81 @@ class _HomePageState extends State<HomePage> {
                 ],
               ),
             ),
-            SizedBox(height: 30),
+            SizedBox(height: 15),
+
+            // 4th Row
+            Container(
+              width: double.maxFinite,
+              height: 120,
+              child: Stack(
+                children: [
+                  Container(
+                    width: double.maxFinite,
+                    height: 90,
+                    margin: EdgeInsets.only(top: 15),
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(15),
+                      image: DecorationImage(
+                        image: AssetImage('assets/card.jpg'),
+                        fit: BoxFit.cover,
+                      ),
+                      boxShadow: [
+                        BoxShadow(
+                          offset: Offset(0, 5),
+                          blurRadius: 5,
+                          color: AppColor.homePageTitle.withOpacity(0.3),
+                        ),
+                      ],
+                    ),
+                  ),
+                  Container(
+                    width: 80,
+                    height: 90,
+                    margin: EdgeInsets.only(left: 10),
+                    decoration: BoxDecoration(
+                      image: DecorationImage(
+                          image: AssetImage('assets/figure.png'),
+                          fit: BoxFit.fill),
+                    ),
+                  ),
+                  Container(
+                    padding: EdgeInsets.all(10),
+                    margin: EdgeInsets.only(top: 20, left: 100),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          'You are doing great!',
+                          style: TextStyle(
+                            color: AppColor.gradientSecond,
+                            fontSize: 14,
+                            fontWeight: FontWeight.w600,
+                          ),
+                        ),
+                        SizedBox(height: 10),
+                        Text(
+                          'Keep it up',
+                          style: TextStyle(
+                            color: AppColor.homePagePlanColor,
+                            fontSize: 12,
+                            fontWeight: FontWeight.w400,
+                          ),
+                        ),
+                        Text(
+                          'Stick to ypur plan',
+                          style: TextStyle(
+                            color: AppColor.homePagePlanColor,
+                            fontSize: 12,
+                            fontWeight: FontWeight.w400,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            SizedBox(height: 5),
           ],
         ),
       ),
