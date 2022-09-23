@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 import 'package:video_training_app/utils/colors.dart';
 
@@ -93,7 +95,6 @@ class _HomePageState extends State<HomePage> {
             Container(
               padding: EdgeInsets.all(15),
               width: double.maxFinite,
-              height: 160,
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.only(
                     topRight: Radius.circular(50),
@@ -143,7 +144,7 @@ class _HomePageState extends State<HomePage> {
                       Row(
                         children: [
                           Icon(
-                            Icons.punch_clock,
+                            Icons.timer,
                             size: 16,
                             color: AppColor.homePageContainerTextSmall,
                           ),
@@ -159,20 +160,19 @@ class _HomePageState extends State<HomePage> {
                         ],
                       ),
                       Container(
-                        padding: EdgeInsets.all(7),
                         decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(100),
-                            color: AppColor.homePageContainerTextSmall,
                             boxShadow: [
                               BoxShadow(
-                                offset: Offset(0, 5),
+                                offset: Offset(0, 3),
                                 blurRadius: 3,
                                 color: AppColor.gradientFirst.withOpacity(0.6),
                               ),
                             ]),
                         child: Icon(
-                          Icons.play_arrow,
-                          color: AppColor.gradientFirst,
+                          Icons.play_circle_fill,
+                          color: AppColor.homePageContainerTextSmall,
+                          size: 42,
                         ),
                       )
                     ],
@@ -180,11 +180,7 @@ class _HomePageState extends State<HomePage> {
                 ],
               ),
             ),
-            SizedBox(height: 10),
-          
-            // 4th Row 
-            Container(),
-            SizedBox(height: 10),
+            SizedBox(height: 30),
           ],
         ),
       ),
