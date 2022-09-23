@@ -153,7 +153,6 @@ class _VideoPageState extends State<VideoPage> {
                 ),
                 child: Column(
                   children: [
-                    
                     // 4th Row Card Title
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -177,6 +176,90 @@ class _VideoPageState extends State<VideoPage> {
                         ),
                       ],
                     ),
+
+                    // 5th Row List
+                    Expanded(
+                      child: ListView.builder(
+                        itemCount: videoData.length,
+                        itemBuilder: ((context, index) {
+                          return Container(
+                            margin: EdgeInsets.only(top: 10),
+                            //padding: EdgeInsets.only(),
+                            child: Column(
+                              children: [
+                                Row(
+                                  children: [
+                                    //Image
+                                    Container(
+                                      height: 60,
+                                      width: 60,
+                                      decoration: BoxDecoration(
+                                        borderRadius: BorderRadius.circular(10),
+                                        image: DecorationImage(
+                                            image: AssetImage(
+                                                videoData[index]['thumbnail']),
+                                            fit: BoxFit.cover),
+                                      ),
+                                    ),
+
+                                    // Desc
+                                    Container(
+                                      padding: EdgeInsets.only(left: 10),
+                                      child: Column(
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.start,
+                                        children: [
+                                          AppText(
+                                              varText: videoData[index]
+                                                  ['title']),
+                                          SizedBox(height: 5),
+                                          AppText(
+                                            varText: videoData[index]['time'],
+                                            varColor: AppColor.greyTextColor,
+                                            varSize: 10,
+                                            varWeight: FontWeight.w600,
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                                SizedBox(height: 10),
+
+                                // Divider line
+                                Row(
+                                  children: [
+                                    // Text In Divider
+                                    Container(
+                                      padding: EdgeInsets.only(
+                                        top: 1,
+                                        bottom: 1.5,
+                                        left: 10,
+                                        right: 10,
+                                      ),
+                                      decoration: BoxDecoration(
+                                          borderRadius:
+                                              BorderRadius.circular(100),
+                                          color: AppColor.lightBlue
+                                              .withOpacity(0.3)),
+                                      child: AppText(
+                                        varText: '3 Sets',
+                                        varColor: AppColor.lightBlue,
+                                        varSize: 10,
+                                        varWeight: FontWeight.w600,
+                                      ),
+                                    ),
+
+                                    //Dots in divider
+                                    Container(),
+                                  ],
+                                ),
+                              ],
+                            ),
+                          );
+                        }),
+                      ),
+                    )
                   ],
                 ),
               ),
