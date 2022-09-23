@@ -55,9 +55,62 @@ class _VideoPageState extends State<VideoPage> {
                 ),
               ],
             ),
-            SizedBox(height: 15),
+            SizedBox(height: 20),
 
-            // 3rd Row 
+            // 3rd Row Info Bar
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Container(
+                  padding: EdgeInsets.all(5),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(7),
+                    color: AppColor.bigText.withOpacity(0.15),
+                  ),
+                  child: Row(
+                    children: [
+                      AppIcon(
+                        varIcon: Icons.timer,
+                        varSize: 14,
+                      ),
+                      Text(
+                        ' 68 min',
+                        style: TextStyle(
+                            color: AppColor.bigText,
+                            fontSize: 11,
+                            fontWeight: FontWeight.w400),
+                      )
+                    ],
+                  ),
+                ),
+                Container(
+                  padding: EdgeInsets.all(5),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(7),
+                    color: AppColor.bigText.withOpacity(0.15),
+                  ),
+                  child: Row(
+                    children: [
+                      AppIcon(
+                        varIcon: Icons.handyman,
+                        varSize: 14,
+                      ),
+                      Text(
+                        ' Resistant band, Kettlebell',
+                        style: TextStyle(
+                            color: AppColor.bigText,
+                            fontSize: 11,
+                            fontWeight: FontWeight.w400),
+                      )
+                    ],
+                  ),
+                ),
+              ],
+            ),
+            SizedBox(height: 20),
+
+            // 4th Row
           ],
         ),
       ),
