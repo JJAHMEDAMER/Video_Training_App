@@ -289,57 +289,66 @@ class _HomePageState extends State<HomePage> {
             ),
 
             //6th Row - List
+
             Container(
-              width: double.maxFinite,
-              height: 180,
-              child: ListView.builder(
-                itemCount: dataFromJsonFile.length,
-                itemBuilder: (unsed_context, itemCount) {
-                  return Row(
-                    children: [
-                      Container(
-                        width: 110,
-                        height: 110,
-                        //padding: EdgeInsets.all(10),
-                        margin: EdgeInsets.only(top: 10),
-                        decoration: BoxDecoration(
-                          color: Colors.white,
-                          borderRadius: BorderRadius.circular(10),
-                          boxShadow: [
-                            BoxShadow(
-                              offset: Offset(0, 5),
-                              blurRadius: 5,
-                              color:
-                                  AppColor.homePagePlanColor.withOpacity(0.7),
-                            ),
-                          ],
-                        ),
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Container(
-                              width: 80,
-                              height: 80,
-                              decoration: BoxDecoration(
-                                color: Colors.white,
-                                image: DecorationImage(
-                                    image: AssetImage(dataFromJsonFile[itemCount]['img']),
-                                    fit: BoxFit.cover),
+              height: 210,
+              child: CustomScrollView(
+                slivers: [
+                  SliverGrid(
+                    gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
+                      maxCrossAxisExtent: 200,
+                      mainAxisSpacing: 10,
+                      crossAxisSpacing: 10,
+                      //childAspectRatio: 4,
+                    ),
+                    delegate: SliverChildBuilderDelegate(
+                      childCount: dataFromJsonFile.length,
+                      (context, index) {
+                        return Container(
+                          width: 110,
+                          height: 110,
+                          //padding: EdgeInsets.all(10),
+                          margin: EdgeInsets.only(top: 10),
+                          decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(10),
+                            boxShadow: [
+                              BoxShadow(
+                                offset: Offset(0, 5),
+                                blurRadius: 5,
+                                color:
+                                    AppColor.homePagePlanColor.withOpacity(0.7),
                               ),
-                            ),
-                            Text(
-                              dataFromJsonFile[itemCount]['title'],
-                              style: TextStyle(
-                                  color: AppColor.gradientSecond,
-                                  fontSize: 14,
-                                  fontWeight: FontWeight.w600),
-                            ),
-                          ],
-                        ),
-                      )
-                    ],
-                  );
-                },
+                            ],
+                          ),
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Container(
+                                width: 80,
+                                height: 80,
+                                decoration: BoxDecoration(
+                                  color: Colors.white,
+                                  image: DecorationImage(
+                                      image: AssetImage(
+                                          dataFromJsonFile[index]['img']),
+                                      fit: BoxFit.cover),
+                                ),
+                              ),
+                              Text(
+                                dataFromJsonFile[index]['title'],
+                                style: TextStyle(
+                                    color: AppColor.gradientSecond,
+                                    fontSize: 14,
+                                    fontWeight: FontWeight.w600),
+                              ),
+                            ],
+                          ),
+                        );
+                      },
+                    ),
+                  ),
+                ],
               ),
             )
           ],
