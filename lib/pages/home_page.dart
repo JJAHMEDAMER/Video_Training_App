@@ -1,3 +1,4 @@
+import 'dart:convert';
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
@@ -11,6 +12,20 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  List dataFromJsonFile = []; //initialize empty list
+
+  _initData() {
+    DefaultAssetBundle.of(context).loadString('json/info.json').then((value) {
+      dataFromJsonFile = json.decode(value);
+    });
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    _initData();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -278,7 +293,7 @@ class _HomePageState extends State<HomePage> {
               width: double.maxFinite,
               height: 180,
               child: ListView.builder(
-                itemCount: 4,
+                itemCount: dataFromJsonFile.length,
                 itemBuilder: (unsed_context, itemCount) {
                   return Row(
                     children: [
@@ -308,13 +323,12 @@ class _HomePageState extends State<HomePage> {
                               decoration: BoxDecoration(
                                 color: Colors.white,
                                 image: DecorationImage(
-                                  image: AssetImage('assets/ex4.png'),
-                                  fit: BoxFit.cover
-                                ),
+                                    image: AssetImage(dataFromJsonFile[itemCount]['img']),
+                                    fit: BoxFit.cover),
                               ),
                             ),
                             Text(
-                              'Arms',
+                              dataFromJsonFile[itemCount]['title'],
                               style: TextStyle(
                                   color: AppColor.gradientSecond,
                                   fontSize: 14,
