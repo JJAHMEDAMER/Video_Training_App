@@ -71,7 +71,7 @@ class _HomePageState extends State<HomePage> {
                       'Details',
                       style: TextStyle(
                         fontSize: 16,
-                        fontWeight: FontWeight.w00,
+                        fontWeight: FontWeight.w400,
                         color: AppColor.homePageDetail,
                       ),
                     ),
@@ -87,6 +87,103 @@ class _HomePageState extends State<HomePage> {
                 )
               ],
             ),
+            SizedBox(height: 10),
+
+            // 3rd Row Card
+            Container(
+              padding: EdgeInsets.all(15),
+              width: double.maxFinite,
+              height: 160,
+              decoration: BoxDecoration(
+                  borderRadius: BorderRadius.only(
+                    topRight: Radius.circular(50),
+                    topLeft: Radius.circular(10),
+                    bottomLeft: Radius.circular(10),
+                    bottomRight: Radius.circular(10),
+                  ),
+                  gradient: LinearGradient(
+                    colors: [
+                      AppColor.gradientFirst,
+                      AppColor.gradientSecond,
+                    ],
+                    begin: Alignment.bottomLeft,
+                    end: Alignment.topRight,
+                  ),
+                  boxShadow: [
+                    BoxShadow(
+                        offset: Offset(0, 5),
+                        blurRadius: 5,
+                        color: AppColor.gradientFirst.withOpacity(0.5))
+                  ]),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    'Next workout',
+                    style: TextStyle(
+                      fontSize: 12,
+                      fontWeight: FontWeight.w600,
+                      color: AppColor.homePageContainerTextSmall,
+                    ),
+                  ),
+                  SizedBox(height: 5),
+                  Text(
+                    'Legs Toning and Glutes Worout',
+                    style: TextStyle(
+                      fontSize: 24,
+                      fontWeight: FontWeight.w400,
+                      color: AppColor.homePageContainerTextBig,
+                    ),
+                  ),
+                  SizedBox(height: 5),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    crossAxisAlignment: CrossAxisAlignment.end,
+                    children: [
+                      Row(
+                        children: [
+                          Icon(
+                            Icons.punch_clock,
+                            size: 16,
+                            color: AppColor.homePageContainerTextSmall,
+                          ),
+                          SizedBox(width: 5),
+                          Text(
+                            '60 min',
+                            style: TextStyle(
+                              fontSize: 12,
+                              fontWeight: FontWeight.w600,
+                              color: AppColor.homePageContainerTextSmall,
+                            ),
+                          ),
+                        ],
+                      ),
+                      Container(
+                        padding: EdgeInsets.all(7),
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(100),
+                            color: AppColor.homePageContainerTextSmall,
+                            boxShadow: [
+                              BoxShadow(
+                                offset: Offset(0, 5),
+                                blurRadius: 3,
+                                color: AppColor.gradientFirst.withOpacity(0.6),
+                              ),
+                            ]),
+                        child: Icon(
+                          Icons.play_arrow,
+                          color: AppColor.gradientFirst,
+                        ),
+                      )
+                    ],
+                  ),
+                ],
+              ),
+            ),
+            SizedBox(height: 10),
+          
+            // 4th Row 
+            Container(),
             SizedBox(height: 10),
           ],
         ),
