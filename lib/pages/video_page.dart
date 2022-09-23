@@ -29,22 +29,37 @@ class _VideoPageState extends State<VideoPage> {
             end: Alignment.topRight,
           ),
         ),
-        child: Column(children: [
+        child: Column(
+          children: [
+            // 1st row icons
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                AppIcon(varIcon: Icons.arrow_back_ios),
+                AppIcon(varIcon: Icons.info_outline)
+              ],
+            ),
+            SizedBox(height: 15),
 
-          // 1st row icons
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              AppIcon(varIcon: Icons.arrow_back_ios),
-              AppIcon(varIcon: Icons.info_outline)
-            ],
-          ),
-          SizedBox(height: 15),
+            // 2nd Row Text
+            Row(
+              children: [
+                Expanded(
+                  child: Text(
+                    'Legs Toning and Glutes Workout',
+                    style: TextStyle(
+                        color: AppColor.bigText,
+                        fontSize: 24,
+                        fontWeight: FontWeight.w400),
+                  ),
+                ),
+              ],
+            ),
+            SizedBox(height: 15),
 
-          // 2nd Row
-          
-        
-        ]),
+            // 3rd Row 
+          ],
+        ),
       ),
     );
   }
