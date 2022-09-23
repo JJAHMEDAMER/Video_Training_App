@@ -27,4 +27,9 @@ class AppColor {
 
   // More Colors
   static Color veryLightBlueIcon = const Color(0xFFb7bce8);
+  static Color lightBlue = const Color(0xFF6d8dea);
+
+  static Color bigText = const Color(0xFFffffff);
+  static const Color blackTextColor = const Color(0xFF2f2f51);
+  static Color greyTextColor = const Color(0xFF9999a9);
 }
