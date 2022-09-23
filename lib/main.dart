@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:video_training_app/pages/home_page.dart';
+import 'package:video_training_app/pages/video_page.dart';
 
 void main() {
   runApp(MyApp());
@@ -16,7 +17,7 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: HomePage(),
+      home: VideoPage(),
       debugShowCheckedModeBanner: false,
     );
   }
